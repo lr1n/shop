@@ -1,0 +1,21 @@
+{% extends "shop_app/base.html"%}
+{% block title %}
+  Детализация по магазину
+{% endblock %}
+
+{% block body %}
+  <div class="col-lg-4 offset-4">
+    <a class="my_class" href="{% url 'shop_app:shop_update' shop.id %}">
+     {{ shop }}
+    </a>
+    {% if shop.image %}
+      <p>
+        <img src="{{ shop.image.url }}" style="max-width: 10rem">
+      </p>
+    {% else %}
+      <p >
+        Изображение отсутствует
+      </p>
+    {% endif %}
+  </div>
+{% endblock %}
